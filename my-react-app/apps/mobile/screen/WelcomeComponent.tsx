@@ -11,6 +11,7 @@ const WelcomeComponent = ({navigation}) => {
     return (
       <View style={styles.animationContainer}>
        <Text>web</Text>
+
         <View style={styles.buttonContainer}>
           <Button
             title="Next Playlist"

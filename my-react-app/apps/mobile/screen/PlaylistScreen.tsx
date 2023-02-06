@@ -1,4 +1,5 @@
 import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { CardFood } from '@my-workspace/my-ui'
 import React, { useState } from 'react'
 
 const PlaylistScreen = ({ navigation }) => {
@@ -22,8 +23,9 @@ const PlaylistScreen = ({ navigation }) => {
         <View>
 
             {playlist.map(p=>{return(
-                <TouchableOpacity onPress={()=>navigation.navigate("Home", {...p})}>
-                    <Text> {p.name} </Text>
+                <TouchableOpacity onPress={()=>navigation.navigate("Home", {...p})} >
+                    <CardFood title="{p.name} dsdsd"></CardFood>
+                    <Text> {p.duration} </Text>
                 </TouchableOpacity>
             )})}
 

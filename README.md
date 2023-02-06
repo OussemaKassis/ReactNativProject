@@ -60,3 +60,24 @@ https://docs.expo.dev/versions/latest/sdk/av/
 
 
 lien figma : https://www.figma.com/file/yeok5btXQmVKR2LUtpIygX/Cours?node-id=0%3A1&t=uNztyamiSK3bMrHF-0
+
+
+
+
+Terminal 1
+Run cd project-name
+Run yarn install --check-files
+Run yarn run build-packages to build the packages.
+Run yarn run watch-packages to build and watch the packages.
+
+
+Terminal 2
+Run cd project-name
+Run npm i -g expo-cli@6.1.0
+Run cd apps/mobile
+Run expo start to start project expo .
+
+
+Terminal 3
+Run cd project-name
+Run yarn run start-storybook to start project storybook .
