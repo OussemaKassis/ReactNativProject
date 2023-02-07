@@ -108,8 +108,8 @@ const HomeScreen = ({ navigation, route }) => {
             </View>
 
             <View style={{ width: 300, marginTop: 30, marginBottom: 35}}>
-                <Text style={{ color: 'white', fontSize: 20, fontWeight: 500, textAlign: 'left' }}>The missing 96 percent of the universe</Text>
-                <Text style={{ color: 'white', fontSize: 14, fontWeight: 400, textAlign: 'left' }}>Claire Malone</Text>
+                <Text style={{ color: 'white', fontSize: 20, fontWeight: 500, textAlign: 'left' }}>{dataPlayer.name}</Text>
+                <Text style={{ color: 'white', fontSize: 14, fontWeight: 400, textAlign: 'left' }}>{dataPlayer.description}</Text>
             </View>
 
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
