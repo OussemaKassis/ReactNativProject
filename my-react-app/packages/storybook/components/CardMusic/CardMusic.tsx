@@ -12,7 +12,6 @@ const CardMusic: React.FC<CardMusicProps> = (props) => {
   const { title, price, description, posterUrl } = props;
   return (
     <View style={{ flex: 1 }}>
-      <Text>CardMusic</Text>
       <Image
         source={{
           uri: posterUrl,
