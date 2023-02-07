@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { UpNextButton, RoundButtonMusic, Cover } from '@my-workspace/my-ui'
+import { UpNextButton, RoundButtonMusic, Cover, Circle } from '@my-workspace/my-ui'
 import { AntDesign, Feather } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
 import { FontAwesome } from '@expo/vector-icons';
@@ -73,7 +73,7 @@ const HomeScreen = ({ navigation, route }) => {
     }, [isPlaying])
 
     return (
-        <View style={{ flex: 1, width: 412, backgroundColor: "#1F1D2B", justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{ flex: 1, width: 412, backgroundColor: "#c30e3c", justifyContent: 'center', alignItems: 'center' }}>
             <Text>{name}</Text>
 
             <Video
@@ -100,16 +100,13 @@ const HomeScreen = ({ navigation, route }) => {
                 <Text style={{ color: 'white', fontSize: 16, fontWeight: 'bold', paddingLeft: 10 }}>Now Playing</Text>
             </View>
 
-            <View style={{ flex: 4 , borderRadius: 20, overflow: 'hidden', flex: 'none'}}>
-                <Cover
-                    borderRadius={20}
-                    imageUrl={dataPlayer.poster}
-                />
+            <View style={{ flex: 4 ,marginTop: 20 ,  borderRadius: 151, overflow: 'hidden', flex: 'none', borderColor: "white", borderWidth: 2}}>
+                <Circle image="https://cdn.pixabay.com/photo/2022/01/28/17/28/headphones-6975223__340.png"></Circle>
             </View>
 
-            <View style={{ width: 300, marginTop: 30, marginBottom: 35}}>
+            <View style={{ width: 300, marginTop: 30, marginBottom: 20}}>
                 <Text style={{ color: 'white', fontSize: 20, fontWeight: 500, textAlign: 'left' }}>{dataPlayer.name}</Text>
-                <Text style={{ color: 'white', fontSize: 14, fontWeight: 400, textAlign: 'left' }}>{dataPlayer.description}</Text>
+                <Text style={{ color: '#CCCCCC', fontSize: 14, fontWeight: 400, textAlign: 'left' }}>{dataPlayer.description}</Text>
             </View>
 
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -147,9 +144,10 @@ const HomeScreen = ({ navigation, route }) => {
                     size={38}
                 /> 
                 <RoundButtonMusic
-                    backgroundColor="#2F3142"
+                    backgroundColor="#BCBCBC"
                     margin={10}
-                    icon={isPlaying ? <FontAwesome name="pause" size={36} color="white" /> : <FontAwesome name="play" size={36} color="white" />}
+                    paddingLeft={5}
+                    icon={isPlaying ? <FontAwesome name="pause" size={36} color="#c30e3c" /> : <FontAwesome name="play" size={36} color="#c30e3c" />}
                     onClickButton={() => { handlePlay(!isPlaying) }}
                     size={70}
                 /> 
@@ -172,18 +170,18 @@ const HomeScreen = ({ navigation, route }) => {
             <View style={{ flex: 'none', padding: 16, alignItems: "center" }}>
                 <RoundButtonMusic
                     backgroundColor="transparent"
-                    margin={10}
+                    margin={0}
                     transform= "rotate(90deg)"
                     icon={<Feather name="chevron-left" size={24} color="white" />}
                     onClickButton={() => { setCurrentDuration(oldValue => oldValue - 2) }}
-                    size={38}
+                    size={24}
                 />
                 <UpNextButton
-                    backgroundColor="#2F3142"
+                    backgroundColor="transparent"
                     padding={20}
                     borderRadius={80}
                     text="Up Next"
-                    textColor="#C4C4C4"
+                    textColor="#FFFFFF"
                     type="button"
                 />
             </View>
