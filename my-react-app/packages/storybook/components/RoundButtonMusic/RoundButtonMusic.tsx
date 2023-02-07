@@ -7,6 +7,7 @@ type RoundButtonMusicProps = {
   margin: number,
   position: string,
   transform: string,
+  paddingLeft: number,
   left: number,
   top: number,
   icon: React.ReactNode;
@@ -15,7 +16,7 @@ type RoundButtonMusicProps = {
 };
 
 const RoundButtonMusic: React.FC<RoundButtonMusicProps> = (props) => {
-  const { backgroundColor, margin, position, left, transform, top, icon, onClickButton, size } = props;
+  const { backgroundColor, margin, position, left, transform, paddingLeft, top, icon, onClickButton, size } = props;
 
   const onPressButton = () => {
     onClickButton();
@@ -29,6 +30,7 @@ const RoundButtonMusic: React.FC<RoundButtonMusicProps> = (props) => {
             backgroundColor,
             margin,
             position,
+            paddingLeft,
             left,
             top,
             transform,
@@ -49,6 +51,7 @@ export default RoundButtonMusic;
 const styles = StyleSheet.create({
   roundButton: {
     borderRadius: 100,
+    paddingLeft: 5,
     justifyContent: 'center',
     alignItems: 'center',
   },
