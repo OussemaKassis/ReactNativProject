@@ -73,7 +73,7 @@ const HomeScreen = ({ navigation, route }) => {
     }, [isPlaying])
 
     return (
-        <View style={{ flex: 1, width: 350, backgroundColor: "#1F1D2B", justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{ flex: 1, width: 412, backgroundColor: "#1F1D2B", justifyContent: 'center', alignItems: 'center' }}>
             <Text>{name}</Text>
 
             <Video
@@ -86,98 +86,107 @@ const HomeScreen = ({ navigation, route }) => {
                 isLooping
             />
 
-            <View style={{ flex: 1, alignItems: 'center', flexDirection: 'row', justifyContent: 'center' }}>
+            <View style={{ flex: 1, alignItems: 'center', flexDirection: 'row', justifyContent: 'center' , position: 'relative'}}>
 
                 <RoundButtonMusic
                     backgroundColor="transparent"
-                    size={70}
+                    position="absolute"
+                    left= {-120} 
+                    top= {-8}
+                    size={20}
                     icon={<AntDesign name="left" size={24} color="white" />}
                     onClickButton={() => { navigation.goBack() }}
                 />
                 <Text style={{ color: 'white', fontSize: 16, fontWeight: 'bold', paddingLeft: 10 }}>Now Playing</Text>
             </View>
-            <View style={{ flex: 4 }}>
 
-
+            <View style={{ flex: 4 , borderRadius: 20, overflow: 'hidden', flex: 'none'}}>
                 <Cover
-                    borderRadius={10}
+                    borderRadius={20}
                     imageUrl={dataPlayer.poster}
                 />
-
-
             </View>
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
 
+            <View style={{ width: 300, marginTop: 30, marginBottom: 35}}>
+                <Text style={{ color: 'white', fontSize: 20, fontWeight: 500, textAlign: 'left' }}>The missing 96 percent of the universe</Text>
+                <Text style={{ color: 'white', fontSize: 14, fontWeight: 400, textAlign: 'left' }}>Claire Malone</Text>
+            </View>
+
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <Slider
+                    value={currentDuration}
+                    onValueChange={(value) => { setCurrentDuration(value) }}
+                    style={{ width: 300, height: 40 }}
+                    minimumValue={0}
+                    step={1}
+                    maximumValue={maxDuration}
+                    minimumTrackTintColor="#FFFFFF"
+                    maximumTrackTintColor="#FDFDFD"
+                    thumbTintColor="#FFF"
+                />
                 <View style={{ flex: 1, minWidth: 300, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
                     <Text style={{ color: 'white' }}>{convertSecondToHHMMSS(currentDuration)}</Text>
                     <Text style={{ color: 'white' }}>{convertSecondToHHMMSS(maxDuration - currentDuration)}</Text>
 
 
                 </View>
-                <Slider
-                    value={currentDuration}
-                    onValueChange={(value) => { setCurrentDuration(value) }}
-                    style={{ width: 200, height: 40 }}
-                    minimumValue={0}
-                    step={1}
-                    maximumValue={maxDuration}
-                    minimumTrackTintColor="#FFFFFF"
-                    maximumTrackTintColor="#FDFDFD"
-                    thumbTintColor="#F00DFD"
-                />
             </View>
-            <View style={{ flex: 1, flexDirection: "row", alignItems: 'center', justifyContent: 'center' }}>
+            <View style={{ flex: 1, flexDirection: "row", alignItems: 'center', justifyContent: 'center', marginTop: 20 }}>
                 <RoundButtonMusic
-                    backgroundColor="blue"
+                    backgroundColor="transparent"
+                    margin={10}
                     icon={<Feather name="chevrons-left" size={24} color="white" />}
                     onClickButton={() => { setCurrentDuration(oldValue => oldValue - 10) }}
-                    size={50}
+                    size={38}
                 />
-
                 <RoundButtonMusic
-                    backgroundColor="blue"
+                    backgroundColor="transparent"
+                    margin={10}
                     icon={<Feather name="chevron-left" size={24} color="white" />}
                     onClickButton={() => { setCurrentDuration(oldValue => oldValue - 2) }}
-                    size={50}
-                /> <RoundButtonMusic
-                    backgroundColor="blue"
-                    icon={isPlaying ? <FontAwesome name="pause" size={24} color="white" /> : <FontAwesome name="play" size={24} color="white" />}
+                    size={38}
+                /> 
+                <RoundButtonMusic
+                    backgroundColor="#2F3142"
+                    margin={10}
+                    icon={isPlaying ? <FontAwesome name="pause" size={36} color="white" /> : <FontAwesome name="play" size={36} color="white" />}
                     onClickButton={() => { handlePlay(!isPlaying) }}
-                    size={50}
-                /> <RoundButtonMusic
-                    backgroundColor="blue"
+                    size={70}
+                /> 
+                <RoundButtonMusic
+                    backgroundColor="transparent"
+                    margin={10}
                     icon={<Feather name="chevron-right" size={24} color="white" />}
                     onClickButton={() => { setCurrentDuration(oldValue => oldValue + 2) }}
 
-                    size={50}
-                /> <RoundButtonMusic
-                    backgroundColor="blue"
+                    size={38}
+                /> 
+                <RoundButtonMusic
+                    backgroundColor="transparent"
+                    margin={10}
                     icon={<Feather name="chevrons-right" size={24} color="white" />}
                     onClickButton={() => { setCurrentDuration(oldValue => oldValue + 10) }}
-
-                    size={50}
+                    size={38}
                 />
-
             </View>
-            <View style={{ flex: 2 }}></View>
-            <View style={{ flex: 1 }}>
-
+            <View style={{ flex: 'none', padding: 16, alignItems: "center" }}>
+                <RoundButtonMusic
+                    backgroundColor="transparent"
+                    margin={10}
+                    transform= "rotate(90deg)"
+                    icon={<Feather name="chevron-left" size={24} color="white" />}
+                    onClickButton={() => { setCurrentDuration(oldValue => oldValue - 2) }}
+                    size={38}
+                />
                 <UpNextButton
-                    backgroundColor="red"
-                    borderRadius="10"
-                    text="Hello"
-                    textColor="#FFFF00"
+                    backgroundColor="#2F3142"
+                    padding={20}
+                    borderRadius={80}
+                    text="Up Next"
+                    textColor="#C4C4C4"
                     type="button"
                 />
-                <UpNextButton
-                    backgroundColor="red"
-                    borderRadius="10"
-                    text="Hello"
-                    textColor="#562c2c"
-                    type="link"
-                /></View>
-
-            <Text>HomeScreen</Text>
+            </View>
         </View>
     )
 }

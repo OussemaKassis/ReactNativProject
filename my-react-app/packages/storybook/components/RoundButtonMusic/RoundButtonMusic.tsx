@@ -4,13 +4,18 @@ import { AntDesign, Ionicons, Entypo } from '@expo/vector-icons';
 
 type RoundButtonMusicProps = {
   backgroundColor: string;
+  margin: number,
+  position: string,
+  transform: string,
+  left: number,
+  top: number,
   icon: React.ReactNode;
   onClickButton: () => void;
   size?: number | 50;
 };
 
 const RoundButtonMusic: React.FC<RoundButtonMusicProps> = (props) => {
-  const { backgroundColor, icon, onClickButton, size } = props;
+  const { backgroundColor, margin, position, left, transform, top, icon, onClickButton, size } = props;
 
   const onPressButton = () => {
     onClickButton();
@@ -22,6 +27,11 @@ const RoundButtonMusic: React.FC<RoundButtonMusicProps> = (props) => {
           styles.roundButton,
           {
             backgroundColor,
+            margin,
+            position,
+            left,
+            top,
+            transform,
             height: size,
             width: size,
           },

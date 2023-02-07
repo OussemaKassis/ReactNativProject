@@ -7,12 +7,12 @@ type CoverProp = {
 };
 
 const Cover: React.FC<CoverProp> = (props) => {
-  const { borderRadius, imageUrl } = props;
+  const { borderRadius, imageUrl, width, height } = props;
   return (
-    <View>
+    <View style={{ borderRadius: 20 }}>
       <ImageBackground
         source={{ uri: imageUrl }}
-        style={{ height: 100, width: 100, borderRadius }}
+        style={{ height: 300, width: 300, borderRadius: 20, marginTop: 20 }}
       ></ImageBackground>
     </View>
   );

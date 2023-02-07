@@ -5,15 +5,16 @@ type UpNextButtonProps = {
     backgroundColor: string
     textColor: string
     borderRadius: string
+    padding: number,
     text: string
     type: 'link' | 'button'
 }
 
 const UpNextButton: React.FC<UpNextButtonProps> = (props) => {
-    const { backgroundColor, textColor, borderRadius, text, type } = props
+    const { backgroundColor, textColor, borderRadius, padding, text, type } = props
 
     const styleComponent = {
-       container : type =='link' ? {} : { backgroundColor : backgroundColor},
+       container : type =='link' ? {} : { backgroundColor : backgroundColor, padding: padding, borderRadius: borderRadius},
        text: type =='link' ? {  borderBottomColor : backgroundColor , borderBottomWidth : 2 } :{}
 
     }

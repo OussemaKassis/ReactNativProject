@@ -16,6 +16,7 @@ const UpNextButtonMeta: ComponentMeta<typeof UpNextButton> = {
         backgroundColor: 'red',
         textColor: '#FFFF00',
         borderRadius: '10',
+        padding: '20',
         text: 'Hello',
         type: 'button'
     }

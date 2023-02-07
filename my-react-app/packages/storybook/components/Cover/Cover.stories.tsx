@@ -10,6 +10,8 @@ const CoverMeta: ComponentMeta<typeof Cover> = {
     imageUrl:
       'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2020%2F01%2Feminem-1-2000.jpg',
     borderRadius: 10,
+    width: 100,
+    height: 100,
   },
 };
 export default CoverMeta;
