@@ -124,7 +124,7 @@ const HomeScreen = ({ navigation, route }) => {
                     maximumTrackTintColor="#FDFDFD"
                     thumbTintColor="#FFF"
                 />
-                <View style={{ flex: 1, minWidth: 300, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                <View style={{ flex: 1, minWidth: 300, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'  }}>
                     <Text style={{ color: 'white' }}>{convertSecondToHHMMSS(currentDuration)}</Text>
                     <Text style={{ color: 'white' }}>{convertSecondToHHMMSS(maxDuration - currentDuration)}</Text>
 
@@ -132,15 +132,9 @@ const HomeScreen = ({ navigation, route }) => {
                 </View>
             </View>
             <View style={{ flex: 1, flexDirection: "row", alignItems: 'center', justifyContent: 'center', marginTop: 20 }}>
+                
                 <RoundButtonMusic
-                    backgroundColor="transparent"
-                    margin={10}
-                    icon={<Feather name="chevrons-left" size={24} color="white" />}
-                    onClickButton={() => { setCurrentDuration(oldValue => oldValue - 10) }}
-                    size={38}
-                />
-                <RoundButtonMusic
-                    backgroundColor="transparent"
+                    backgroundColor="#2F3142"
                     margin={10}
                     icon={<Feather name="chevron-left" size={24} color="white" />}
                     onClickButton={() => { setCurrentDuration(oldValue => oldValue - 2) }}
@@ -154,37 +148,25 @@ const HomeScreen = ({ navigation, route }) => {
                     size={70}
                 /> 
                 <RoundButtonMusic
-                    backgroundColor="transparent"
+                    backgroundColor="#2F3142"
                     margin={10}
                     icon={<Feather name="chevron-right" size={24} color="white" />}
                     onClickButton={() => { setCurrentDuration(oldValue => oldValue + 2) }}
 
                     size={38}
                 /> 
-                <RoundButtonMusic
-                    backgroundColor="transparent"
-                    margin={10}
-                    icon={<Feather name="chevrons-right" size={24} color="white" />}
-                    onClickButton={() => { setCurrentDuration(oldValue => oldValue + 10) }}
-                    size={38}
-                />
+
             </View>
-            <View style={{ flex: 'none', padding: 16, alignItems: "center" }}>
-                <RoundButtonMusic
-                    backgroundColor="transparent"
-                    margin={10}
-                    transform= "rotate(90deg)"
-                    icon={<Feather name="chevron-left" size={24} color="white" />}
-                    onClickButton={() => { setCurrentDuration(oldValue => oldValue - 2) }}
-                    size={38}
-                />
+            <View style={{ flex: 'none', padding:0, alignItems: "center" , borderBottomColor: "white", borderBottomWidth: 1, marginBottom:20}}>
+                
                 <UpNextButton
-                    backgroundColor="#2F3142"
-                    padding={20}
+                    backgroundColor="transparent"
+                    padding={0}
                     borderRadius={80}
                     text="Up Next"
-                    textColor="#C4C4C4"
+                    textColor="#FFFFFF"
                     type="button"
+                    decorationLine="underline"
                 />
             </View>
         </View>
