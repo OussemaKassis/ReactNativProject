@@ -49,7 +49,7 @@ const PlaylistScreen = ({ navigation }) => {
                 <Text style={{ fontSize: 18, fontWeight: 700,  textAlign: "center", color: "white", paddingTop: 50 }}>My Project</Text>
             </View>
             <View style={{ flex: 'none', width: 412, textAlign: "center", borderRadius: 17, overflow: 'hidden' }}>
-                <TextInput inlineImageRight="username" inlineImagePadding={5} placeholder='Search' placeholderTextColor="white" style={{ flex: 'none', margin: 'auto',  width: 315, borderRadius: 17, backgroundColor: '#252836', marginTop: 30, paddingTop: 15, paddingLeft: 30,paddingBottom: 15, paddingRight: 30}}/>
+                <TextInput inlineImageRight="username" inlineImagePadding={5} placeholder='Search' placeholderTextColor="white" style={{ flex: 'none', margin: 'auto',  width: 355, borderRadius: 17, backgroundColor: '#252836', marginTop: 30, paddingTop: 15, paddingLeft: 30,paddingBottom: 15, paddingRight: 30}}/>
             </View>
 
             <View style={{ flex: 'none', width: 412, paddingLeft: 22 }}>
